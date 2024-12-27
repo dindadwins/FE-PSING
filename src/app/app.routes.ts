@@ -1,3 +1,9 @@
 import { Routes } from '@angular/router';
+import { BaseComponent } from './base/base.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: 'savings-prediction',
+    component: BaseComponent
+  }
+];
