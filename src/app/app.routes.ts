@@ -1,9 +1,17 @@
 import { Routes } from '@angular/router';
-import { BaseComponent } from './base/base.component';
+import { ContainerComponent } from './container/container.component';
+import { HomeComponent } from './container/home/home.component';
+import { FormComponent } from './container/form/form.component';
+import { ResultComponent } from './container/result/result.component';
 
 export const routes: Routes = [
   {
     path: 'savings-prediction',
-    component: BaseComponent
+    component: ContainerComponent,
+    children: [
+      {path: 'home', component: HomeComponent},
+      {path: 'form', component: FormComponent},
+      {path: 'result', component: ResultComponent}
+    ]
   }
 ];
