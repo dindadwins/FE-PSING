@@ -1,0 +1,26 @@
+@import "@fontsource/poppins";
+
+/* Dropdown Button */
+.dropdown select {
+  background-color: #FBFDFF;
+  border: 1px solid #182D88;
+  height: 40px;
+  border-radius: 5px;
+
+  // text
+  color: #95959B;
+  font-family: Poppins;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-content option:hover{
+  position: absolute;
+  background-color: #FBFDFF;
+  border: 1px solid #182D88;
+  width: 280px;
+  z-index: 1;
+  border-radius: 5px;
+}

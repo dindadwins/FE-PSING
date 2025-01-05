@@ -1,1 +1,62 @@
-<p>personal-char works!</p>
+<div class="all-field-wrapper">
+  <div class="field-wrapper">
+    <div class="field-label-notes-wrapper">
+      <div class="field-label">
+        <span>Tujuan Penggunaan</span>
+      </div>
+      <span class="field-notes">*harap pilih semua yang sesuai</span>
+    </div>
+    <div class="checkbox-input-wrapper">
+      <div class="checkbox-input">
+        <input type="checkbox" id="invests" value="invests">
+        <span>Investasi</span>
+      </div>
+      <div class="checkbox-input" [attr.notFirst]="true">
+        <input type="checkbox" id="long_term" value="long_term">
+        <span>Simpanan Jangka Panjang</span>
+      </div>
+      <div class="checkbox-input" [attr.notFirst]="true">
+        <input type="checkbox" id="daily" value="daily">
+        <span>Kegiatan Sehari-hari</span>
+      </div>
+      <div class="checkbox-input" [attr.notFirst]="true">
+        <input type="checkbox" id="others" value="others">
+        <span>Lainnya</span>
+      </div>
+    </div>
+    <!-- <app-dropdown #salaryDropdown [dropdownContent]="salaryContent" [width]="'480px'"></app-dropdown> -->
+  </div>
+</div>
+
+
+<div class="all-field-wrapper" [attr.notFirst]="true">
+  <div class="field-wrapper">
+    <div class="field-label">
+      <span>Rata-rata Penghasilan</span>
+    </div>
+    <app-dropdown #salaryDropdown [dropdownContent]="salaryContent" [width]="'480px'"></app-dropdown>
+  </div>
+
+  <div class="field-wrapper" [attr.notFirst]="true">
+    <div class="field-label">
+      <span>Persentase yang Ditabung</span>
+    </div>
+    <app-dropdown #savingsDropdown [dropdownContent]="savingsContent" [width]="'480px'"></app-dropdown>
+  </div>
+</div>
+
+<div class="all-field-wrapper" [attr.notFirst]="true">
+  <div class="field-wrapper">
+    <div class="field-label">
+      <span>Mata Uang</span>
+    </div>
+    <app-dropdown #currencyDropdown [dropdownContent]="currencyContent" [width]="'480px'"></app-dropdown>
+  </div>
+
+  <div class="field-wrapper" [attr.notFirst]="true">
+    <div class="field-label">
+      <span>Aksesibilitas Online</span>
+    </div>
+    <app-dropdown #accessDropdown [dropdownContent]="accessContent" [width]="'480px'"></app-dropdown>
+  </div>
+</div>

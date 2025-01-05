@@ -1,0 +1,10 @@
+<div class="step-button-wrapper">
+  <div class="previous-btn">
+    <img *ngIf="!isBeforeAvailable" src="../../../assets/previous-gray.svg">
+    <img (click)="emitPrevious()" *ngIf="isBeforeAvailable" src="assets/previous-blue.svg">
+  </div>
+  <div class="next-btn">
+    <img *ngIf="!isNextAvailable" src="../../../assets/next-gray.svg">
+    <img (click)="emitNext()" *ngIf="isNextAvailable" src="../../../assets/next-blue.svg">
+  </div>
+</div>

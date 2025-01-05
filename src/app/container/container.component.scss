@@ -1,5 +1,5 @@
 .base-container {
-  background-image: url('../../assets/container-bg.svg');
+  background-image: url('../../../public/assets/container-bg.svg');
   -webkit-background-size:cover;
   -o-background-size:cover;
   -moz-background-size:cover;
@@ -15,10 +15,11 @@
   left: 0;
 
     &-page {
-      background-image: url('../../assets/page-bg.svg');
+      background-image: url('../../../public/assets/page-bg.svg');
       background-size:contain;
       background-repeat: no-repeat;
-      min-width: 75%;
-      min-height: 80%;
+      background-position-x: center;
+      width: 80%;
+      height: 80%;
     }
 }
