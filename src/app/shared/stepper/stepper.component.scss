@@ -1,0 +1,35 @@
+@import "@fontsource/poppins";
+
+.all-stepper-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 900px;
+}
+
+.step-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number img {
+  width: 40px;
+  height: 40px;
+}
+
+.step-title {
+  font-family: Poppins;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.line-step-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.line-wrapper {
+  border-bottom: 2px solid;
+  width: 250px;
+  margin-top: 20px;
+}

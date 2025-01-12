@@ -1,0 +1,43 @@
+@import "@fontsource/poppins";
+
+.all-field-wrapper {
+  display: flex;
+
+  &[notFirst=true]{
+    margin-top: 30px;
+  }
+}
+
+.field-wrapper {
+  display: block;
+
+  &[notFirst=true]{
+    margin-left: 30px;
+  }
+}
+
+.field-label {
+  font-family: Poppins;
+  color: #182D88;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.input-field-wrapper {
+  background-color: #FBFDFF;
+  border: 1px solid #182D88;
+  height: 40px;
+  border-radius: 5px;
+
+  color: #182D88;
+  font-family: Poppins;
+  font-size: 15px;
+}
+
+.age-field-wrapper span {
+  margin-left: -60px;
+  margin-right: 10px;
+  font-family: Poppins;
+  font-size: 15px;
+  color: #182D88;
+}

@@ -1,0 +1,42 @@
+@import "@fontsource/poppins";
+
+.confirmation-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-title {
+  margin-top: 30px;
+  color: #182D88;
+  font-size: 30px;
+  font-family: Poppins;
+  font-weight: bold;
+  text-align: center;
+}
+
+.confirmation-notes {
+  width: 800px;
+  font-family: Poppins;
+  font-size: 15px;
+  color: #95959B;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit-btn  {
+  width: 140px;
+  height: 50px;
+  background-color: #0065AD;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: Poppins;
+  font-size: 15px;
+  align-self: center;
+  margin-top: 50px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+}

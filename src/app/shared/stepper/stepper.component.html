@@ -1,0 +1,36 @@
+<div class="all-stepper-wrapper">
+  <div class="step-wrapper">
+    <div class="step-number">
+      <img src="../../../assets/step-1.svg">
+    </div>
+    <div class="step-title">
+      <span style="color: #0065AD;" >Data Pribadi</span>
+    </div>
+  </div>
+
+  <div class="line-step-wrapper">
+    <div class="line-wrapper" [ngStyle]="{'color': stepOneDone? '#0065AD' : '#95959B' }"></div>
+    <div class="step-wrapper">
+      <div class="step-number">
+        <img *ngIf="stepOneDone" src="../../../assets/step-2-blue.svg">
+        <img *ngIf="!stepOneDone" src="../../../assets/step-2-gray.svg">
+      </div>
+      <div class="step-title">
+        <span [ngStyle]="{'color': stepOneDone? '#0065AD' : '#95959B' }" >Karakteristik Individu</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="line-step-wrapper">
+    <div class="line-wrapper" [ngStyle]="{'color': stepTwoDone? '#0065AD' : '#95959B' }"></div>
+    <div class="step-wrapper">
+      <div class="step-number">
+        <img *ngIf="stepTwoDone" src="../../../assets/step-3-blue.svg">
+        <img *ngIf="!stepTwoDone" src="../../../assets/step-3-gray.svg">
+      </div>
+      <div class="step-title">
+        <span [ngStyle]="{'color': stepTwoDone? '#0065AD' : '#95959B' }">Konfirmasi</span>
+      </div>
+    </div>
+  </div>
+</div>
