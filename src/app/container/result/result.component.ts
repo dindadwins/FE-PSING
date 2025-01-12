@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './result.component.html',
   styleUrl: './result.component.scss'
 })
-export class ResultComponent {
 
+export class ResultComponent implements OnInit{
+  @Output() backToHome = new EventEmitter;
+
+  ngOnInit(): void {
+
+  }
+
+  buttonBackToHome(){
+    this.backToHome.emit()
+  }
 }
