@@ -1,0 +1,53 @@
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.title-field{
+    margin-bottom: 40px;
+    
+}
+
+.title-field > span{
+    font-weight: 600;
+    font-size: 27px;
+    color: #182D88;
+}
+
+.result-field{
+    border: 3px solid #182D88;
+    border-radius: 38px;
+    width: 713px;
+    height: 162px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+span{
+    color: #182D88;
+    font-size: 21px;
+}
+
+span.product{
+    font-size: 27px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.back-btn{
+    background-color: #0065AD;
+    color: #FFFFFF;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 20px 40px;
+}
