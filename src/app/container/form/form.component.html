@@ -1,0 +1,28 @@
+<div class="stepper-wrapper">
+  <app-stepper [stepOneDone]="doneStepOne" [stepTwoDone]="doneStepTwo"></app-stepper>
+</div>
+
+<div class="form-wrapper">
+  <app-private-data *ngIf="componentDisplayed === 'PRIVATE_DATA'">
+
+  </app-private-data>
+
+  <app-personal-char *ngIf="componentDisplayed === 'PERSONAL_CHAR'">
+
+  </app-personal-char>
+
+  <app-confirmation *ngIf="componentDisplayed === 'CONFIRMATION'">
+
+  </app-confirmation>
+
+</div>
+
+<div class="step-btn-wrapper">
+  <app-step-button
+    [isBeforeAvailable]="componentDisplayed != 'PRIVATE_DATA'"
+    [isNextAvailable]="componentDisplayed != 'CONFIRMATION'"
+    (previous)="onClickPrevious()"
+    (next)="onClickNext()">
+  </app-step-button>
+</div>
+

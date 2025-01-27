@@ -1,0 +1,22 @@
+@import "@fontsource/poppins";
+
+.stepper-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-block: 50px;
+}
+
+.form-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  height: 280px;
+}
+
+.step-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 1110px;
+  margin-top: 50px;
+}
+
