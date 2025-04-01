@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-confirmation',
@@ -7,9 +7,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './confirmation.component.scss'
 })
 export class ConfirmationComponent {
-  @Output() onClickNext = new EventEmitter;
+  @Output() onSubmit = new EventEmitter;
 
-  buttonNextClick(){
-    this.onClickNext.emit();
+  submit(){
+    this.onSubmit.emit();
   }
 }

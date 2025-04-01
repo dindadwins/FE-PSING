@@ -3,15 +3,19 @@
 </div>
 
 <div class="form-wrapper">
-  <app-private-data *ngIf="componentDisplayed === 'PRIVATE_DATA'">
-
+  <app-private-data
+    #private
+    *ngIf="componentDisplayed === 'PRIVATE_DATA'">
   </app-private-data>
 
-  <app-personal-char *ngIf="componentDisplayed === 'PERSONAL_CHAR'">
-
+  <app-personal-char
+    #personal
+    *ngIf="componentDisplayed === 'PERSONAL_CHAR'">
   </app-personal-char>
 
-  <app-confirmation *ngIf="componentDisplayed === 'CONFIRMATION'">
+  <app-confirmation
+    *ngIf="componentDisplayed === 'CONFIRMATION'"
+    (onSubmit)="onClickSubmit()">
 
   </app-confirmation>
 
