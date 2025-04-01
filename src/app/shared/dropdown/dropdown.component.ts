@@ -1,5 +1,5 @@
 import { NgFor, NgStyle } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,7 @@ export class DropdownComponent implements OnInit{
 
   @Input() dropdownContent: string[] = [];
   @Input() width: string = '300px';
+  @Output() emitSelected = new EventEmitter;
   selectedOption: string = '';
 
   ngOnInit(): void {
@@ -19,5 +20,6 @@ export class DropdownComponent implements OnInit{
 
   selectValue(value: string){
     this.selectedOption = value;
+    this.emitSelected.emit(this.selectedOption);
   }
 }
