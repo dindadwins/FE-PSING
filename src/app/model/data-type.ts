@@ -14,18 +14,18 @@ export interface FormData {
 }
 
 export interface PrivateData {
-  age: number;
+  umur: number;
   gender: string;
-  domicile: string;
-  job: string;
-  marital: string;
-  family: string;
+  domisili: string;
+  profesi: string;
+  status_perkawinan: string;
+  jumlah_tanggungan: string;
 }
 
 export interface PersonalChar {
-  purpose: string[];
-  salary: string;
-  savings: string;
+  tujuan: string[];
+  penghasilan: string;
+  persentase_tabungan: string;
   currency: string;
   access: string;
 }
