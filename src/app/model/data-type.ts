@@ -25,7 +25,7 @@ export interface PrivateData {
 export interface PersonalChar {
   tujuan: string[];
   penghasilan: string;
-  persentase_tabungan: string;
+  persentasi_tabungan: string;
   currency: string;
   access: string;
 }
@@ -37,5 +37,5 @@ export interface CheckedValue {
 
 export interface FinalOutput {
   percentage: string;
-  savings_product: string;
+  produk: string;
 }
