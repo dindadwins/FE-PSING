@@ -12,7 +12,7 @@ import { FinalOutput } from '../../model/data-type';
 export class ResultComponent{
   result: FinalOutput = {
     percentage: '',
-    savings_product: ''
+    produk: ''
   };
 
   constructor(private router: Router){

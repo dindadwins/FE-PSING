@@ -1,7 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PrivateDataComponent } from './private-data/private-data.component';
-import { PersonalCharComponent } from './personal-char/personal-char.component';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
@@ -10,8 +7,6 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import { DropdownComponent } from '../../shared/dropdown/dropdown.component';
-import { StepButtonComponent } from '../../shared/step-button/step-button.component';
-import { StepperComponent } from '../../shared/stepper/stepper.component';
 import { FormData } from '../../model/data-type';
 import { take } from 'rxjs';
 import { DataService } from '../../service/data.service';
@@ -21,45 +16,41 @@ import { DataService } from '../../service/data.service';
   standalone: true,
   imports: [
     CommonModule,
-    PrivateDataComponent,
-    PersonalCharComponent,
-    ConfirmationComponent,
     MatInputModule,
     MatFormFieldModule,
     MatStepperModule,
     MatButtonModule,
     FormsModule,
-    DropdownComponent,
-    StepButtonComponent,
-    StepperComponent
+    DropdownComponent
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
 export class FormComponent implements OnInit{
-  @ViewChild('private') private !: PrivateDataComponent;
-  @ViewChild('personal') personal !: PersonalCharComponent;
 
-  componentDisplayed = 'PRIVATE_DATA';
-  doneStepOne: boolean = false;
-  doneStepTwo: boolean = false;
+  customerName: string = '';
+  genderContent: string[] = ['Perempuan', 'Laki-laki'];
+  domicileContent: string[] = ['Jabodetabek', 'Non Jabodetabek'];
+  jobContent: string[] = ['Pelajar', 'Mahasiswa', 'Karyawan Swasta', 'Pengusaha', 'Lainnya'];
+  maritalContent: string[] = ['Belum Kawin', 'Kawin'];
+  salaryContent: string[] = ['< 1 Juta', '1-5 Juta', '5-10 Juta', '10-15 Juta', '15-20 Juta', '> 20 Juta'];
+  savingsContent: string[] = ['0%', '1-5%', '5-10%', '10-20%', '20-30%', '> 30%'];
+  ageContent: string[] = ['< 12 tahun', '12-17 tahun', '17-21 tahun', '21-30 tahun', '30-55 tahun', '> 55 tahun'];
 
   formData: FormData = {
-    private_data: {
-      age: 0,
-      gender: '',
-      domicile: '',
-      job: '',
-      marital: '',
-      family: '',
+    umur: '',
+    gender: '',
+    domisili: '',
+    profesi: '',
+    status_perkawinan: '',
+    tujuan: {
+      investasi: 0,
+      simpanan_jangka_panjang: 0,
+      kegiatan_sehari_hari: 0,
+      tujuan_lainnya: 0
     },
-    personal_char: {
-      purpose: [],
-      salary: '',
-      savings: '',
-      currency: '',
-      access: ''
-    }
+    penghasilan: '',
+    persentase_tabungan: ''
   };
 
   constructor(
@@ -71,34 +62,50 @@ export class FormComponent implements OnInit{
 
   }
 
-  onClickNext(){
-    const page = this.componentDisplayed;
-    switch(page){
-      case 'PRIVATE_DATA':
-        this.doneStepOne = true;
-        this.componentDisplayed = 'PERSONAL_CHAR';
-        this.formData.private_data = this.private.privateData;
+  fieldAction(type: string, event: any) {
+    switch(type){
+      case 'name' :
+        this.customerName = event.target.value ?? '';
         break;
-      case 'PERSONAL_CHAR':
-        this.doneStepTwo = true;
-        this.componentDisplayed = 'CONFIRMATION';
-        this.formData.personal_char = this.personal.personalChar;
+      case 'age':
+        this.formData.umur = event ?? '';
+        break;
+      case 'gender':
+        this.formData.gender = event ?? '';
+        break;
+      case 'domicile':
+        this.formData.domisili = event ?? '';
+        break;
+      case 'job':
+        this.formData.profesi = event ?? '';
+        break;
+      case 'marital':
+        this.formData.status_perkawinan = event ?? '';
+        break;
+      case 'salary':
+        this.formData.penghasilan = event;
+        break;
+      case 'savings':
+        this.formData.persentase_tabungan = event;
         break;
       default:
         break;
     }
   }
 
-  onClickPrevious(){
-    const page = this.componentDisplayed;
-    switch(page){
-      case 'PERSONAL_CHAR':
-        this.doneStepOne = false;
-        this.componentDisplayed = 'PRIVATE_DATA';
+  setPurposeChecked(value: string, event: any){
+    switch(value) {
+      case 'investasi':
+        this.formData.tujuan.investasi = event?.target?.value ? 1 : 0;
         break;
-      case 'CONFIRMATION':
-        this.doneStepTwo = false;
-        this.componentDisplayed = 'PERSONAL_CHAR';
+      case 'simpanan_jangka_panjang':
+        this.formData.tujuan.simpanan_jangka_panjang = event?.target?.value ? 1 : 0;
+        break;
+      case 'kegiatan_sehari_hari':
+        this.formData.tujuan.kegiatan_sehari_hari = event?.target?.value ? 1 : 0;
+        break;
+      case 'tujuan_lainnya':
+        this.formData.tujuan.tujuan_lainnya = event?.target?.value ? 1 : 0;
         break;
       default:
         break;
@@ -106,6 +113,7 @@ export class FormComponent implements OnInit{
   }
 
   onClickSubmit(){
+    console.log(this.formData)
     this.dataService.postData(this.formData).pipe(take(1)).subscribe(
       (res) => {
         if(res.error_schema.error_code === 'SUCCESS') {
@@ -114,5 +122,4 @@ export class FormComponent implements OnInit{
       }
     );
   }
-
 }

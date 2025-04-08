@@ -9,8 +9,14 @@ export interface ErrorSchema {
 }
 
 export interface FormData {
-  private_data: PrivateData;
-  personal_char: PersonalChar;
+  umur: string;
+  gender: string;
+  domisili: string;
+  profesi: string;
+  status_perkawinan: string;
+  tujuan: Purpose;
+  penghasilan: string;
+  persentase_tabungan: string;
 }
 
 export interface PrivateData {
@@ -19,20 +25,24 @@ export interface PrivateData {
   domisili: string;
   profesi: string;
   status_perkawinan: string;
-  jumlah_tanggungan: string;
 }
 
 export interface PersonalChar {
-  tujuan: string[];
+  tujuan: Purpose;
   penghasilan: string;
   persentasi_tabungan: string;
-  currency: string;
-  access: string;
 }
 
 export interface CheckedValue {
   value: string;
   is_checked: boolean;
+}
+
+export interface Purpose {
+  investasi: number;
+  simpanan_jangka_panjang: number;
+  kegiatan_sehari_hari: number;
+  tujuan_lainnya: number;
 }
 
 export interface FinalOutput {

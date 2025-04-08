@@ -1,22 +1,122 @@
 @import "@fontsource/poppins";
 
-.stepper-wrapper {
+.title-wrapper {
   display: flex;
   justify-content: center;
-  margin-block: 50px;
+  padding-top: 35px;
+
+  p {
+    font-family: Poppins;
+    color: #182D88;
+    font-size: 28px;
+    font-weight: 600;
+  }
 }
 
 .form-wrapper {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
+  padding-inline: 120px;
+  padding-top: 20px;
   height: 280px;
 }
-
-.step-btn-wrapper {
+.all-field-wrapper {
   display: flex;
-  justify-content: flex-end;
-  width: 1110px;
-  margin-top: 50px;
+
+  &[notFirst=true]{
+    margin-top: 30px;
+  }
+}
+
+.field-wrapper {
+  display: block;
+
+  &[notFirst=true]{
+    margin-left: 30px;
+  }
+}
+
+.field-label {
+  font-family: Poppins;
+  color: #182D88;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.input-field-wrapper {
+  background-color: #FBFDFF;
+  border: 1px solid #182D88;
+  height: 40px;
+  border-radius: 5px;
+
+  color: #182D88;
+  font-family: Poppins;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.age-field-wrapper span {
+  margin-left: -60px;
+  margin-right: 10px;
+  font-family: Poppins;
+  font-size: 15px;
+  color: #182D88;
+}
+
+.field-label-notes-wrapper {
+  display: flex;
+}
+
+.field-notes {
+  color: #0065AD;
+  font-size: 12px;
+  font-family: Poppins;
+  font-style: italic;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+.checkbox-input {
+  color: #182D88;
+  font-size: 15px;
+  font-family: Poppins;
+  display: flex;
+  justify-items: center;
+
+  &[notFirst=true]{
+    margin-left: 20px;
+  }
+}
+
+.checkbox-input input {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #182D88;
+  margin-right: 5px;
+}
+
+.checkbox-input span {
+  margin-top: 5px;
+}
+
+.checkbox-input-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 135px;
+}
+
+.submit-btn  {
+  width: 300px;
+  height: 50px;
+  background-color: #0065AD;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: Poppins;
+  font-size: 15px;
+  align-self: center;
 }
 
