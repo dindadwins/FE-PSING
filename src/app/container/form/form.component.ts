@@ -55,7 +55,7 @@ export class FormComponent implements OnInit{
     rate_admin: 4,
     rate_limit: 4,
     rate_bunga: 4,
-    rate_setoran_awal: 4,
+    rate_setoran_awal: 1,
     rate_kebutuhan: 4
   };
 

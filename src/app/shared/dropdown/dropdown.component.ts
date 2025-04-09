@@ -14,11 +14,13 @@ export class DropdownComponent implements OnInit{
   @Input() width: string = '300px';
   @Output() emitSelected = new EventEmitter;
   selectedOption: string = '';
+  selected: boolean = false;
 
   ngOnInit(): void {
   }
 
   selectValue(value: string){
+    this.selected = true;
     this.selectedOption = value;
     this.emitSelected.emit(this.selectedOption);
   }

@@ -6,8 +6,8 @@
   -o-background-size:cover;
   -moz-background-size:cover;
   background-size:cover;
-  width: 1538px;
-  height: 730px;
+  width: 100vw;
+  height: 100vh;
   margin: 0px;
   position: fixed;
   display: flex;
@@ -20,9 +20,8 @@
 
     &-page {
       background-color: white;
-      width: 80%;
-      height: 80%;
+      width: 80vw;
+      height: 80vh;
       border-radius: 50px;
-      background-position-x: center;
     }
 }

@@ -1,100 +1,104 @@
-<div class="title-wrapper">
-  <p>Formulir Calon Nasabah</p>
-</div>
-
-<div class="form-wrapper">
-  <div class="all-field-wrapper">
-    <div class="field-wrapper">
-      <div class="field-label">
-        <span>Nama</span>
-      </div>
-      <input class="input-field-wrapper" type="text" style="width: 325px;" required (change)="fieldAction('name', $event)">
+<div class="form">
+  <div class="form-page-wrapper">
+    <div class="title-wrapper">
+      <p>Formulir Calon Nasabah</p>
     </div>
 
-    <div class="field-wrapper" [attr.notFirst]="true">
-      <div class="field-label">
-        <span>Umur</span>
+    <div class="form-wrapper">
+      <div class="all-field-wrapper">
+        <div class="field-wrapper">
+          <div class="field-label">
+            <span>Nama</span>
+          </div>
+          <input class="input-field-wrapper" type="text" style="width: 325px;" required (change)="fieldAction('name', $event)">
+        </div>
+
+        <div class="field-wrapper" [attr.notFirst]="true">
+          <div class="field-label">
+            <span>Umur</span>
+          </div>
+          <app-dropdown #ageDropdown [dropdownContent]="ageContent" (emitSelected)="fieldAction('age', $event)"></app-dropdown>
+        </div>
+
+        <div class="field-wrapper" [attr.notFirst]="true">
+          <div class="field-label">
+            <span>Gender</span>
+          </div>
+          <app-dropdown #genderDropdown [dropdownContent]="genderContent" (emitSelected)="fieldAction('gender', $event)"></app-dropdown>
+        </div>
       </div>
-      <app-dropdown #ageDropdown [dropdownContent]="ageContent" (emitSelected)="fieldAction('age', $event)"></app-dropdown>
+
+      <div class="all-field-wrapper" [attr.notFirst]="true">
+        <div class="field-wrapper">
+          <div class="field-label">
+            <span>Domisili</span>
+          </div>
+          <app-dropdown #domicileDropdown [dropdownContent]="domicileContent" [width]="'310px'" (emitSelected)="fieldAction('domicile', $event)"></app-dropdown>
+        </div>
+
+        <div class="field-wrapper" [attr.notFirst]="true">
+          <div class="field-label">
+            <span>Kegiatan atau Pekerjaan</span>
+          </div>
+          <app-dropdown #jobDropdown [dropdownContent]="jobContent" [width]="'310px'" (emitSelected)="fieldAction('job', $event)"></app-dropdown>
+        </div>
+
+        <div class="field-wrapper" [attr.notFirst]="true">
+          <div class="field-label">
+            <span>Status Perkawinan</span>
+          </div>
+          <app-dropdown #maritalDropdown [dropdownContent]="maritalContent" [width]="'310px'" (emitSelected)="fieldAction('marital', $event)"></app-dropdown>
+        </div>
+      </div>
+
+      <div class="all-field-wrapper" [attr.notFirst]="true">
+        <div class="field-wrapper">
+          <div class="field-label">
+            <span>Rata-rata Penghasilan</span>
+          </div>
+          <app-dropdown #salaryDropdown [dropdownContent]="salaryContent" [width]="'480px'" (emitSelected)="fieldAction('salary', $event)"></app-dropdown>
+        </div>
+
+        <div class="field-wrapper" [attr.notFirst]="true">
+          <div class="field-label">
+            <span>Persentase yang Ditabung</span>
+          </div>
+          <app-dropdown #savingsDropdown [dropdownContent]="savingsContent" [width]="'480px'" (emitSelected)="fieldAction('savings', $event)"></app-dropdown>
+        </div>
+      </div>
+
+      <div class="all-field-wrapper" [attr.notFirst]="true">
+        <div class="field-wrapper">
+          <div class="field-label-notes-wrapper">
+            <div class="field-label">
+              <span>Tujuan Penggunaan</span>
+            </div>
+            <span class="field-notes">*harap pilih semua yang sesuai</span>
+          </div>
+          <div class="checkbox-input-wrapper">
+            <div class="checkbox-input">
+              <input type="checkbox" id="invests" value="invests" (change)="setPurposeChecked('investasi', $event)">
+              <span>Investasi</span>
+            </div>
+            <div class="checkbox-input" [attr.notFirst]="true">
+              <input type="checkbox" id="long_term" value="long_term" (change)="setPurposeChecked('simpanan_jangka_panjang', $event)">
+              <span>Simpanan Jangka Panjang</span>
+            </div>
+            <div class="checkbox-input" [attr.notFirst]="true">
+              <input type="checkbox" id="daily" value="daily" (change)="setPurposeChecked('kegiatan_sehari_hari', $event)">
+              <span>Kegiatan Sehari-hari</span>
+            </div>
+            <div class="checkbox-input" [attr.notFirst]="true">
+              <input type="checkbox" id="others" value="others" (change)="setPurposeChecked('tujuan_lainnya', $event)">
+              <span>Lainnya</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="field-wrapper" [attr.notFirst]="true">
-      <div class="field-label">
-        <span>Gender</span>
-      </div>
-      <app-dropdown #genderDropdown [dropdownContent]="genderContent" (emitSelected)="fieldAction('gender', $event)"></app-dropdown>
+    <div class="btn-wrapper">
+      <button class="submit-btn" (click)="onClickSubmit()">Submit</button>
     </div>
   </div>
-
-  <div class="all-field-wrapper" [attr.notFirst]="true">
-    <div class="field-wrapper">
-      <div class="field-label">
-        <span>Domisili</span>
-      </div>
-      <app-dropdown #domicileDropdown [dropdownContent]="domicileContent" [width]="'310px'" (emitSelected)="fieldAction('domicile', $event)"></app-dropdown>
-    </div>
-
-    <div class="field-wrapper" [attr.notFirst]="true">
-      <div class="field-label">
-        <span>Kegiatan atau Pekerjaan</span>
-      </div>
-      <app-dropdown #jobDropdown [dropdownContent]="jobContent" [width]="'310px'" (emitSelected)="fieldAction('job', $event)"></app-dropdown>
-    </div>
-
-    <div class="field-wrapper" [attr.notFirst]="true">
-      <div class="field-label">
-        <span>Status Perkawinan</span>
-      </div>
-      <app-dropdown #maritalDropdown [dropdownContent]="maritalContent" [width]="'310px'" (emitSelected)="fieldAction('marital', $event)"></app-dropdown>
-    </div>
-  </div>
-
-  <div class="all-field-wrapper" [attr.notFirst]="true">
-    <div class="field-wrapper">
-      <div class="field-label">
-        <span>Rata-rata Penghasilan</span>
-      </div>
-      <app-dropdown #salaryDropdown [dropdownContent]="salaryContent" [width]="'480px'" (emitSelected)="fieldAction('salary', $event)"></app-dropdown>
-    </div>
-
-    <div class="field-wrapper" [attr.notFirst]="true">
-      <div class="field-label">
-        <span>Persentase yang Ditabung</span>
-      </div>
-      <app-dropdown #savingsDropdown [dropdownContent]="savingsContent" [width]="'480px'" (emitSelected)="fieldAction('savings', $event)"></app-dropdown>
-    </div>
-  </div>
-
-  <div class="all-field-wrapper" [attr.notFirst]="true">
-    <div class="field-wrapper">
-      <div class="field-label-notes-wrapper">
-        <div class="field-label">
-          <span>Tujuan Penggunaan</span>
-        </div>
-        <span class="field-notes">*harap pilih semua yang sesuai</span>
-      </div>
-      <div class="checkbox-input-wrapper">
-        <div class="checkbox-input">
-          <input type="checkbox" id="invests" value="invests" (change)="setPurposeChecked('investasi', $event)">
-          <span>Investasi</span>
-        </div>
-        <div class="checkbox-input" [attr.notFirst]="true">
-          <input type="checkbox" id="long_term" value="long_term" (change)="setPurposeChecked('simpanan_jangka_panjang', $event)">
-          <span>Simpanan Jangka Panjang</span>
-        </div>
-        <div class="checkbox-input" [attr.notFirst]="true">
-          <input type="checkbox" id="daily" value="daily" (change)="setPurposeChecked('kegiatan_sehari_hari', $event)">
-          <span>Kegiatan Sehari-hari</span>
-        </div>
-        <div class="checkbox-input" [attr.notFirst]="true">
-          <input type="checkbox" id="others" value="others" (change)="setPurposeChecked('tujuan_lainnya', $event)">
-          <span>Lainnya</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="btn-wrapper">
-  <button class="submit-btn" (click)="onClickSubmit()">Submit</button>
 </div>

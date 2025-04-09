@@ -1,5 +1,5 @@
 <div class="dropdown dropbtn">
-  <select class="dropdown-content" id="dropdown" #dropdown (change)="selectValue(dropdown.value)" [ngStyle]="{'width': width}">
+  <select class="dropdown-content" id="dropdown" #dropdown (change)="selectValue(dropdown.value)" [ngStyle]="{'width': width}"  [attr.selected]="selected">
     <option value="''" disabled selected hidden [attr.isDefault]="true">Pilih salah satu</option>
     <ng-container *ngFor="let content of dropdownContent">
       <option value="{{ content }}">{{ content }}</option>
