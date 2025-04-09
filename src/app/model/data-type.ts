@@ -43,7 +43,7 @@ export interface Purpose {
 
 export interface Result {
   predicted_class: string;
-  compability: string;
+  compatibility: string;
   top_3_recommendations: Recommendations[];
 }
 

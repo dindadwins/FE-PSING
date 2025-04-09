@@ -12,7 +12,7 @@ import { Result } from '../../model/data-type';
 export class ResultComponent{
   result: Result = {
     predicted_class: '',
-    compability: '',
+    compatibility: '',
     top_3_recommendations: []
   };
 
