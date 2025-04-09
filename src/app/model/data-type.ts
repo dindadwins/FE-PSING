@@ -1,13 +1,3 @@
-export interface ServiceResponse<T> {
-  error_schema: ErrorSchema;
-  output_schema: T;
-}
-
-export interface ErrorSchema {
-  error_code: string;
-  error_message: string;
-}
-
 export interface FormData {
   umur: string;
   gender: string;
@@ -45,7 +35,13 @@ export interface Purpose {
   tujuan_lainnya: number;
 }
 
-export interface FinalOutput {
-  percentage: string;
-  produk: string;
+export interface Result {
+  predicted_class: string;
+  compability: string;
+  top_3_recommendations: Recommendations[];
+}
+
+export interface Recommendations {
+  class_name: string;
+  probability: string;
 }

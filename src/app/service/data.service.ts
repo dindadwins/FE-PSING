@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FinalOutput, FormData, ServiceResponse } from '../model/data-type';
+import { FormData, Result } from '../model/data-type';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class DataService {
     private http: HttpClient
   ) { }
 
-  postData(form: FormData): Observable<ServiceResponse<FinalOutput>> {
-    return this.http.post<ServiceResponse<FinalOutput>>(this.apiUrl, form);
+  postData(form: FormData): Observable<Result> {
+    return this.http.post<Result>(this.apiUrl, form);
   }
 }

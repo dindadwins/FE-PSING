@@ -116,9 +116,7 @@ export class FormComponent implements OnInit{
     console.log(this.formData)
     this.dataService.postData(this.formData).pipe(take(1)).subscribe(
       (res) => {
-        if(res.error_schema.error_code === 'SUCCESS') {
-          this.router.navigateByUrl('savings-prediction/result', {state: res.output_schema});
-        }
+        this.router.navigateByUrl('savings-prediction/result', {state: res});
       }
     );
   }

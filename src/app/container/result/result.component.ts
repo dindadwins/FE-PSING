@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FinalOutput } from '../../model/data-type';
+import { Result } from '../../model/data-type';
 
 @Component({
   selector: 'app-result',
@@ -10,9 +10,10 @@ import { FinalOutput } from '../../model/data-type';
 })
 
 export class ResultComponent{
-  result: FinalOutput = {
-    percentage: '',
-    produk: ''
+  result: Result = {
+    predicted_class: '',
+    compability: '',
+    top_3_recommendations: []
   };
 
   constructor(private router: Router){
