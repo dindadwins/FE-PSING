@@ -50,7 +50,13 @@ export class FormComponent implements OnInit{
       tujuan_lainnya: 0
     },
     penghasilan: '',
-    persentase_tabungan: ''
+    persentase_tabungan: '',
+    rate_fungsionalitas: 4,
+    rate_admin: 4,
+    rate_limit: 4,
+    rate_bunga: 4,
+    rate_setoran_awal: 4,
+    rate_kebutuhan: 4
   };
 
   constructor(

@@ -13,5 +13,10 @@ export const routes: Routes = [
       {path: 'form', component: FormComponent},
       {path: 'result', component: ResultComponent}
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/savings-prediction/home',
+    pathMatch: 'full',
   }
 ];
