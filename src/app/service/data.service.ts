@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://localhost:8082/fe-psing';
+  private apiUrl = 'http://127.0.0.1:8000/predict/';
 
   constructor(
     private http: HttpClient
