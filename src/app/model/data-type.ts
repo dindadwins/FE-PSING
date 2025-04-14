@@ -7,12 +7,6 @@ export interface FormData {
   tujuan: Purpose;
   penghasilan: string;
   persentase_tabungan: string;
-  rate_fungsionalitas: number;
-  rate_admin: number;
-  rate_limit: number;
-  rate_bunga: number;
-  rate_setoran_awal: number;
-  rate_kebutuhan: number;
 }
 
 export interface PrivateData {
