@@ -22,7 +22,7 @@
 
         <div class="field-wrapper" [attr.notFirst]="true">
           <div class="field-label">
-            <span>Gender</span>
+            <span>Jenis Kelamin</span>
           </div>
           <app-dropdown #genderDropdown [dropdownContent]="genderContent" (emitSelected)="fieldAction('gender', $event)"></app-dropdown>
         </div>
@@ -98,7 +98,7 @@
     </div>
 
     <div class="btn-wrapper">
-      <button class="submit-btn" (click)="onClickSubmit()">Submit</button>
+      <button class="submit-btn" (click)="onClickSubmit()">Kirim</button>
     </div>
   </div>
 </div>

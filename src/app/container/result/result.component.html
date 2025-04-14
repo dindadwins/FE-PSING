@@ -3,15 +3,19 @@
         <span>Hasil</span>
     </div>
 
-    <div class="result-field">
-        <div class="result-title">
-            <span>{{ result.compatibility + ' match with'}}</span>
-            <span class="product">{{ result.predicted_class }}</span>
-        </div>
-        <div class="result-subtitle">
-
-        </div>
+    <div class="result-button-field-wrapper">
+      <div class="button-left" (click)="onClickPrevious()" [attr.disabled]="position===0"></div>
+      <div class="result-field">
+          <div class="result-title">
+              <span>{{ 'Anda cocok dengan produk '}}</span>
+              <span class="product">{{ predicted_product }}</span>
+          </div>
+          <div class="result-subtitle">
+            terdapat 2 rekomendasi produk lainnya!
+          </div>
+      </div>
+      <div class="button-right" (click)="onClictNext()" [attr.disabled]="position===2"></div>
     </div>
 
-    <button class="back-btn" (click) ="backToHome()">Back to Home</button>
+    <button class="button-back" (click) ="backToHome()">Kembali ke Beranda</button>
 </div>

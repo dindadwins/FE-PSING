@@ -35,7 +35,7 @@ export class FormComponent implements OnInit{
   maritalContent: string[] = ['Belum Kawin', 'Kawin'];
   salaryContent: string[] = ['< 1 juta', '1-5 juta', '5-10 juta', '10-15 juta', '15-20 juta', '> 20 juta'];
   savingsContent: string[] = ['0%', '1-5%', '5-10%', '10-20%', '20-30%', '> 30%'];
-  ageContent: string[] = ['< 12 tahun', '12-17 tahun', '17-21 tahun', '21-30 tahun', '30-55 tahun', '> 55 tahun'];
+  ageContent: string[] = ['12-17 tahun', '17-21 tahun', '21-30 tahun', '30-55 tahun', '> 55 tahun'];
 
   formData: FormData = {
     umur: '',
